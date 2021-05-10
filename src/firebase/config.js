@@ -50,6 +50,25 @@ class Firebase {
     });
   }
 
+  async getPosts() {
+    const posts = await firebase.firestore().collection("posts").get();
+    const postsArray = [];
+    posts.forEach(doc => postsArray.push({ id: doc.id, data: doc.data() }));
+
+    return postsArray;
+  }
+
+  async getPost(postId) {
+    const post = await firebase
+      .firestore()
+      .collection("posts")
+      .doc(postId)
+      .get();
+    const postData = post.data();
+
+    return postData;
+  }
+
   async createPost(post) {
     const storageRef = firebase.storage().ref();
     const storageChild = storageRef.child(post.cover.name);

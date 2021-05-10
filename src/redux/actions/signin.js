@@ -5,7 +5,6 @@ export const createUser = (email, password) => {
     const user = await firebase
       .signin(email, password)
       .catch(error => console.log(error));
-    console.log(user);
 
     if (user) {
       dispatch({ type: "CREATE_USER", payload: user });

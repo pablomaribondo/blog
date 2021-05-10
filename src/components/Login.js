@@ -19,7 +19,6 @@ const Login = () => {
 
     if (email.length > 0 && password.length > 0) {
       const user = await loginUserAction(email, password);
-      console.log(user);
       if (user) {
         setRouteRedirect(true);
       }

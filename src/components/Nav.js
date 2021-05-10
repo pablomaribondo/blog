@@ -22,7 +22,6 @@ const Nav = () => {
   });
 
   const logoutHandler = async () => {
-    console.log("logout user");
     setUser(null);
     await logoutUserAction();
     history.replace("/");
