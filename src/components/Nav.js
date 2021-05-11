@@ -4,7 +4,7 @@ import { Link, withRouter, useHistory } from "react-router-dom";
 
 import firebase from "../firebase/config";
 
-import { logoutUser } from "../redux/actions/logout";
+import { logoutUser } from "../redux/actions";
 
 const Nav = () => {
   const loginSelector = useSelector(state => state.login);

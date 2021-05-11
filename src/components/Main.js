@@ -2,17 +2,17 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { getPosts } from "../redux/actions/getPosts";
+import { indexPost } from "../redux/actions";
 
 const Main = () => {
-  const getPostsSelector = useSelector(state => state.posts);
+  const indexPostSelector = useSelector(state => state.indexPost);
 
   const dispatch = useDispatch();
 
-  const getPostsAction = () => dispatch(getPosts());
+  const indexPostAction = () => dispatch(indexPost());
 
   useEffect(() => {
-    getPostsAction();
+    indexPostAction();
   }, []); // eslint-disable-line
 
   return (
@@ -31,7 +31,7 @@ const Main = () => {
       </header>
 
       <div className="posts">
-        {getPostsSelector.posts.map(post => (
+        {indexPostSelector.posts.map(post => (
           <div className="post" key={post.id}>
             <div style={{ backgroundImage: `url(${post.data.cover})` }}>
               <Link to={`post/${post.id}`}>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Redirect } from "react-router-dom";
 
-import { createUser } from "../redux/actions/signin";
+import { createUser } from "../redux/actions";
 
 const Signin = () => {
   const [email, setEmail] = useState("");

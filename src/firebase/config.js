@@ -50,7 +50,7 @@ class Firebase {
     });
   }
 
-  async getPosts() {
+  async indexPost() {
     const posts = await firebase.firestore().collection("posts").get();
     const postsArray = [];
     posts.forEach(doc => postsArray.push({ id: doc.id, data: doc.data() }));
@@ -58,7 +58,7 @@ class Firebase {
     return postsArray;
   }
 
-  async getPost(postId) {
+  async showPost(postId) {
     const post = await firebase
       .firestore()
       .collection("posts")
@@ -90,6 +90,63 @@ class Firebase {
       .catch(error => console.log(error));
 
     return firebasePost;
+  }
+
+  async updatePost(postId, post) {
+    if (post["cover"]) {
+      const storageRef = firebase.storage().ref();
+      const storageChild = storageRef.child(post.cover.name);
+      const postCover = await storageChild.put(post.cover);
+      const downloadURL = await storageChild.getDownloadURL();
+      const fileRef = postCover.ref._delegate._location.path_;
+
+      await storageRef
+        .child(post["oldcover"])
+        .delete()
+        .catch(error => console.log(error));
+
+      const updatePost = {
+        title: post.title,
+        content: post.content,
+        cover: downloadURL,
+        fileref: fileRef,
+      };
+
+      const firebasePost = await firebase
+        .firestore()
+        .collection("posts")
+        .doc(postId)
+        .set(updatePost, { merge: true })
+        .catch(error => console.log(error));
+
+      return firebasePost;
+    } else {
+      const firebasePost = await firebase
+        .firestore()
+        .collection("posts")
+        .doc(postId)
+        .set(post, { merge: true })
+        .catch(error => console.log(error));
+
+      return firebasePost;
+    }
+  }
+
+  async deletePost(postId, fileRef) {
+    const storageRef = firebase.storage().ref();
+    await storageRef
+      .child(fileRef)
+      .delete()
+      .catch(error => console.log(error));
+
+    const post = await firebase
+      .firestore()
+      .collection("posts")
+      .dic(postId)
+      .delete()
+      .catch(error => console.log(error));
+
+    return post;
   }
 }
 

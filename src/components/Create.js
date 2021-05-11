@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Redirect } from "react-router-dom";
 
-import { createPost } from "../redux/actions/create";
+import { createPost } from "../redux/actions";
 
 const Create = () => {
   const [title, setTitle] = useState("");
