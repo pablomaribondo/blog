@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
@@ -16,7 +16,7 @@ const Main = () => {
   }, []); // eslint-disable-line
 
   return (
-    <React.Fragment>
+    <>
       <header>
         <div>
           <h1>
@@ -41,7 +41,7 @@ const Main = () => {
           </div>
         ))}
       </div>
-    </React.Fragment>
+    </>
   );
 };
 

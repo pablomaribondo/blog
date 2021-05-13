@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Redirect } from "react-router-dom";
 
@@ -31,7 +31,7 @@ const Signin = () => {
   return routeRedirect ? (
     <Redirect to="/" />
   ) : (
-    <React.Fragment>
+    <>
       <form onSubmit={signinHandler}>
         <p>Create an account</p>
         <label htmlFor="email">Email: </label>
@@ -52,7 +52,7 @@ const Signin = () => {
 
         <input type="submit" value="Create account" />
       </form>
-    </React.Fragment>
+    </>
   );
 };
 

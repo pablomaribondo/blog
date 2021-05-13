@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, withRouter, useHistory } from "react-router-dom";
 
@@ -34,24 +34,24 @@ const Nav = () => {
       user !== null
     ) {
       return (
-        <React.Fragment>
+        <>
           <li>
             <button className="logout" onClick={logoutHandler}>
               Logout
             </button>
           </li>
-        </React.Fragment>
+        </>
       );
     } else {
       return (
-        <React.Fragment>
+        <>
           <li>
             <Link to="/signin">Signin</Link>
           </li>
           <li>
             <Link to="/login">Login</Link>
           </li>
-        </React.Fragment>
+        </>
       );
     }
   };
