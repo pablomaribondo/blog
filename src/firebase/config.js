@@ -20,21 +20,17 @@ class Firebase {
   }
 
   async signin(email, password) {
-    const user = await firebase
+    return firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .catch(error => console.log(error));
-
-    return user;
   }
 
   async login(email, password) {
-    const user = await firebase
+    return firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
       .catch(error => console.log(error));
-
-    return user;
   }
 
   async logout() {
@@ -64,9 +60,8 @@ class Firebase {
       .collection("posts")
       .doc(postId)
       .get();
-    const postData = post.data();
 
-    return postData;
+    return post.data();
   }
 
   async createPost(post) {
@@ -83,13 +78,11 @@ class Firebase {
       fileref: fileRef,
     };
 
-    const firebasePost = await firebase
+    return firebase
       .firestore()
       .collection("posts")
       .add(newPost)
       .catch(error => console.log(error));
-
-    return firebasePost;
   }
 
   async updatePost(postId, post) {
@@ -112,23 +105,19 @@ class Firebase {
         fileref: fileRef,
       };
 
-      const firebasePost = await firebase
+      return firebase
         .firestore()
         .collection("posts")
         .doc(postId)
         .set(updatePost, { merge: true })
         .catch(error => console.log(error));
-
-      return firebasePost;
     } else {
-      const firebasePost = await firebase
+      return firebase
         .firestore()
         .collection("posts")
         .doc(postId)
         .set(post, { merge: true })
         .catch(error => console.log(error));
-
-      return firebasePost;
     }
   }
 
@@ -139,14 +128,12 @@ class Firebase {
       .delete()
       .catch(error => console.log(error));
 
-    const post = await firebase
+    return firebase
       .firestore()
       .collection("posts")
       .dic(postId)
       .delete()
       .catch(error => console.log(error));
-
-    return post;
   }
 }
 
