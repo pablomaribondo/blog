@@ -138,7 +138,7 @@ const Post = () => {
                 onChange={({ target: { files } }) => setCover(files[0])}
               />
 
-              <input type="submit" value="update post" />
+              <input type="submit" value="Update Post" />
             </form>
           </>
         );

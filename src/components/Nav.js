@@ -60,12 +60,15 @@ const Nav = () => {
     <nav>
       <ul>
         <li>
-          <Link to="/">ReactReduxFirebaseAuth</Link>
+          <Link to="/" className="logo">
+            <span>r</span>eact<span>r</span>edux<span>f</span>irebase
+            <span>a</span>uth
+          </Link>
         </li>
       </ul>
       <ul>
         <li>
-          <Link to="/create">new post</Link>
+          <Link to="/create">New Post</Link>
         </li>
         {renderButton()}
       </ul>

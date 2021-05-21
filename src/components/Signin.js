@@ -33,7 +33,7 @@ const Signin = () => {
   ) : (
     <>
       <form onSubmit={signinHandler}>
-        <p>Create an account</p>
+        <p>CREATE AN ACCOUNT</p>
         <label htmlFor="email">Email: </label>
         <input
           type="email"

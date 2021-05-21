@@ -42,9 +42,9 @@ const Create = () => {
     } else {
       return (
         <form onSubmit={addPostHandler}>
-          <p>Create a new post</p>
+          <p>CREATE A NEW POST</p>
 
-          <label htmlFor="title">Post title:</label>
+          <label htmlFor="title">Post Title:</label>
           <input
             type="text"
             name="title"
@@ -52,7 +52,7 @@ const Create = () => {
             value={title}
           />
 
-          <label htmlFor="content">Post content:</label>
+          <label htmlFor="content">Post Content:</label>
           <textarea
             name="content"
             onChange={({ target: { value } }) => setContent(value)}
@@ -60,14 +60,14 @@ const Create = () => {
           ></textarea>
 
           <label htmlFor="cover" className="cover">
-            Cover
+            Post Cover
           </label>
           <input
             type="file"
             onChange={({ target: { files } }) => setCover(files[0])}
           />
 
-          <input type="submit" value="create post" />
+          <input type="submit" value="Create Post" />
         </form>
       );
     }

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
 html,
 body {
   min-height: 100% !important;
@@ -7,28 +9,43 @@ body {
 body {
   margin: 0;
   padding: 0px;
-  font-family: "Source Sans Pro";
-  background: rgb(7, 101, 241);
-  color: #fff;
+  background: #99b6e8;
+  color: #fdfdfa;
 }
 
 body * {
   transition: all 0.4s ease-in-out;
 }
 
+body,
+input,
+button {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+.logo {
+  text-transform: uppercase;
+  color: #778eb5;
+}
+
+.logo span {
+  color: #99b6e8;
+}
+
 nav {
   display: flex;
   align-items: center;
   width: 100%;
-  margin: 0 auto;
-  background: #fff;
+  margin: 0;
+  background: #fdfdfa;
   justify-content: space-between;
   color: #111;
 }
 
 nav ul {
   list-style: none;
-  padding: 0px 10px;
+  padding: 0px 30px 0 20px;
   margin: 10px 0px;
 }
 
@@ -47,9 +64,13 @@ nav ul:first-of-type li:first-of-type {
   font-size: 1.1rem;
 }
 
+.nav-btn {
+  border-radius: 4px;
+}
+
 header {
-  height: 500px;
-  background: rgb(180, 228, 255);
+  height: 400px;
+  background: #b4e4ff;
   color: #111;
   position: relative;
   overflow: hidden;
@@ -95,17 +116,29 @@ header img {
   margin: 60px 10px;
   width: 300px;
   min-width: 300px;
+  position: relative;
 }
 
-.post > div {
+.post-image {
   width: 100%;
   height: 400px;
   background-position: center;
-  background-size: 200% !important;
+  background-repeat: no-repeat;
+  background-size: cover;
   border-radius: 10px;
+  filter: brightness(0.8);
+  transition: all 0.3s ease-out;
 }
-.post p {
-  color: #fff;
+
+.post-image:hover {
+  filter: brightness(0.95);
+}
+
+.post-title {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  color: #fdfdfa;
   text-decoration: none;
   font-weight: bold;
 }
@@ -114,7 +147,7 @@ header img {
   width: 60%;
   margin: 40px auto;
   padding: 10px;
-  border: 1px solid #eee;
+  border: 1px solid #fdfdfa;
 }
 
 .single > img {
@@ -132,6 +165,7 @@ form * {
   padding: 10px 0px;
   border: none;
   display: block;
+  border-radius: 4px;
 }
 
 .editForm {
@@ -144,11 +178,13 @@ form * {
   background: none;
   padding: 10px;
   border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .edit {
-  border: 1px solid #eee;
-  color: #eee;
+  border: 1px solid #fdfdfa;
+  color: #fdfdfa;
 }
 
 .logout {
@@ -158,7 +194,7 @@ form * {
 
 .delete {
   background: rgb(250, 60, 60);
-  color: #eee;
+  color: #fdfdfa;
   margin-top: 120px;
 }
 
@@ -175,14 +211,16 @@ form input[type="submit"] {
   width: 30%;
   cursor: pointer;
   background: none;
-  border: 1px solid #eee;
-  color: #eee;
+  border: 1px solid #fdfdfa;
+  color: #fdfdfa;
   font-weight: bold;
+  margin-top: 20px;
+  border-radius: 4px;
 }
 
 form input[type="submit"]:hover {
-  border-color: rgb(0, 99, 248);
-  background: rgb(0, 99, 248);
+  border-color: #a595f5;
+  background: #a595f5;
   -webkit-box-shadow: 0px 10px 18px -6px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 10px 18px -6px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 10px 18px -6px rgba(0, 0, 0, 0.75);
@@ -200,10 +238,10 @@ form input[type="submit"]:hover {
   font-size: 10px;
   position: relative;
   text-indent: -9999em;
-  border-top: 1.1em solid rgba(128, 0, 255, 0.2);
-  border-right: 1.1em solid rgba(128, 0, 255, 0.2);
-  border-bottom: 1.1em solid rgba(128, 0, 255, 0.2);
-  border-left: 1.1em solid #8000ff;
+  border-top: 1.1em solid #a595f560;
+  border-right: 1.1em solid #a595f560;
+  border-bottom: 1.1em solid #a595f560;
+  border-left: 1.1em solid #a595f5;
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
   transform: translateZ(0);

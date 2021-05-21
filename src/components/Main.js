@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 import { indexPost } from "../redux/actions";
+import image from "../assets/image.svg";
 
 const Main = () => {
   const indexPostSelector = useSelector(state => state.indexPost);
@@ -28,16 +29,19 @@ const Main = () => {
             ligula, maximus in purus nec, maximus ultricies nibh.
           </p>
         </div>
+        <img src={image} alt="React Redux" />
       </header>
 
       <div className="posts">
         {indexPostSelector.posts.map(post => (
           <div className="post" key={post.id}>
-            <div style={{ backgroundImage: `url(${post.data.cover})` }}>
-              <Link to={`post/${post.id}`}>
-                <p>{post.data.title}</p>
-              </Link>
-            </div>
+            <Link to={`post/${post.id}`}>
+              <div
+                className="post-image"
+                style={{ backgroundImage: `url(${post.data.cover})` }}
+              ></div>
+              <p className="post-title">{post.data.title}</p>
+            </Link>
           </div>
         ))}
       </div>
