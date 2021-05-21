@@ -74,12 +74,16 @@ const Post = () => {
     if (!editMode) {
       setTitle(post.post.title);
       setContent(post.post.content);
+      setCover(post.post.fileref);
     }
 
     setEditMode(!editMode);
   };
 
-  const deletePostHandler = () => {};
+  const deletePostHandler = async () => {
+    await deletePostAction(postId, cover);
+    setRouteRedirect(true);
+  };
 
   const renderDeleteButton = () => {
     if (

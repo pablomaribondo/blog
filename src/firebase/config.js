@@ -131,7 +131,7 @@ class Firebase {
     return firebase
       .firestore()
       .collection("posts")
-      .dic(postId)
+      .doc(postId)
       .delete()
       .catch(error => console.log(error));
   }
