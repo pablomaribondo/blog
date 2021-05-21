@@ -15,7 +15,7 @@ As seguintes tecnologias foram utilizadas no desenvolvimento do projeto:
 ## 📷 Screenshots
 
 <kbd>
-  <img src=".github/screenshot-home.png" alt="Blog home" width="500" />
+  <img src=".github/screenshot-home.png" alt="Blog home" width="700" />
 </kbd>
 
 <kbd>
@@ -27,11 +27,11 @@ As seguintes tecnologias foram utilizadas no desenvolvimento do projeto:
 </kbd>
 
 <kbd>
-  <img src=".github/screenshot-psot.png" alt="Blog post" width="500" />
+  <img src=".github/screenshot-post.png" alt="Blog post" width="500" />
 </kbd>
 
-[playlist]: https://www.youtube.com/playlist?list=PLolX_BtuGc9RI9RDmsy-eAaiyRq2aM6HS/
-[channel]: https://www.youtube.com/channel/UCsbBhGOM5l927nz5-jTIqlw/
+[playlist]: https://www.youtube.com/playlist?list=PLolX_BtuGc9RI9RDmsy-eAaiyRq2aM6HS
+[channel]: https://www.youtube.com/channel/UCsbBhGOM5l927nz5-jTIqlw
 [react]: https://reactjs.org/
 [react-redux]: https://react-redux.js.org/
 [firebase]: https://firebase.google.com/
